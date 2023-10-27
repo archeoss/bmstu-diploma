@@ -1,0 +1,8 @@
+[doc]
+name = "nir"
+bundle = "https://data1.fullyjustified.net/tlextras-2022.0r0.tar"
+
+[[output]]
+name = "nir"
+type = "pdf"
+shell_escape = true # minted
