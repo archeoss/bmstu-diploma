@@ -17,6 +17,8 @@
 \renewcommand{\baselinestretch}{1.5}
 \setlist{nolistsep} % Отсутствие отступов между элементами \enumerate и \itemize
 
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 % Дополнительное окружения для подписей
 \usepackage{array}
 \newenvironment{signstabular}[1][1]{
@@ -55,7 +57,7 @@
 \captionsetup[table]{singlelinecheck=false, labelsep=endash}
 
 \usepackage{graphicx}
-\usepackage{slashbox} % Диагональное разделение первой ячейки в таблицах
+\usepackage{inc/slashbox} % Диагональное разделение первой ячейки в таблицах
 
 % Цвета для гиперссылок и листингов
 \usepackage{color}
@@ -173,5 +175,10 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
 \renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
+
+\pagenumbering{gobble}
+    \normalsize
+    \pagenumbering{arabic}
+
 \title{НИР}
 \begin{document}

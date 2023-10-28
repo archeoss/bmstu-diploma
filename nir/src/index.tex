@@ -1,1 +1,21 @@
-Hello, world.
+% TODO: \includepdf[pages={1}]{RPZ_title.pdf} 
+\renewcommand{\contentsname}{\normalsize\bfseries\centering СОДЕРЖАНИЕ}
+    \tableofcontents
+    \normalsize
+
+\include{pages/01-definitions}
+\include{pages/02-abbreviations}
+
+\include{pages/03-introduction}
+\include{pages/04-analysis}
+\include{pages/05-design}
+\include{pages/08-conclusion}
+
+
+\include{pages/09-biblio}
+\section*{\centering ПРИЛОЖЕНИЕ А}
+\addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ А}
+
+\section*{Презентация к курсовой работе}
+Презентация содержит 13 слайдов.
+
