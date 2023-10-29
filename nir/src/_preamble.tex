@@ -12,10 +12,15 @@
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \setlength{\parindent}{1.25cm}
-%\setlength{\parskip}{1em} % поменять
-%\linespread{1.3}
 \renewcommand{\baselinestretch}{1.5}
 \setlist{nolistsep} % Отсутствие отступов между элементами \enumerate и \itemize
+\usepackage[
+	style=gost-numeric,
+	language=auto,
+	autolang=other,
+	sorting=none,
+]{biblatex}
+\bibliography{biblio}
 
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
@@ -28,16 +33,18 @@
 	\endtabular
 }
 
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Точки у секций
+% \renewcommand{\cftdot}{}
 \newcommand{\specsection}[1]{
     \section*{\centering#1}
     \addcontentsline{toc}{section}{#1}
 }
 
+
 % Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу;
 % Переопределение их отступов до и после для 1.5 интервала во всем документе
 \usepackage{titlesec}
-
-
 
 \titleformat{\section}[block]
 {\bfseries\normalsize}{\thesection}{1em}{}
@@ -62,25 +69,12 @@
 % Цвета для гиперссылок и листингов
 \usepackage{color}
 
-% Гиперссылки \toc с кликабельностью
-\usepackage{hyperref}
-
-\hypersetup{
-	linktoc=all,
-	linkcolor=black,
-	colorlinks=true,
-	urlcolor=black,
-}
-
 
 
 \usepackage{color} % Цвета для гиперссылок и листингов
 %\definecolor{comment}{rgb}{0,0.5,0}
 %\definecolor{plain}{rgb}{0.2,0.2,0.2}
 %\definecolor{string}{rgb}{0.91,0.45,0.32}
-%\hypersetup{citecolor=blue}
-\hypersetup{citecolor=black}
-
 \usepackage{xcolor}
 
 \usepackage{ulem} % Нормальное нижнее подчеркивание
@@ -107,23 +101,6 @@
 {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
 \titlespacing*{\subsubsubsection}
 {14mm}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-\makeatletter
-\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
-	{3.25ex \@plus1ex \@minus.2ex}%
-	{-1em}%
-	{\normalfont\normalsize\bfseries}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
-	{3.25ex \@plus1ex \@minus .2ex}%
-	{-1em}%
-	{\normalfont\normalsize\bfseries}}
-\def\toclevel@subsubsubsection{4}
-\def\toclevel@paragraph{5}
-\def\toclevel@paragraph{6}
-\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
-\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
-\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
-\makeatother
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
@@ -179,6 +156,18 @@
 \pagenumbering{gobble}
     \normalsize
     \pagenumbering{arabic}
+
+% Гиперссылки \toc с кликабельностью
+\usepackage{hyperref}
+
+\hypersetup{
+	linktoc=all,
+	linkcolor=black,
+	colorlinks=true,
+	urlcolor=black,
+}
+%\hypersetup{citecolor=blue}
+\hypersetup{citecolor=black}
 
 \title{НИР}
 \begin{document}
