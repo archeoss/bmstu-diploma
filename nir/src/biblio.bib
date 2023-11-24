@@ -1,1 +1,158 @@
+@article{power4,
+	author = {Tendler, Joel and Dodson, J. and Fields, J. and le, Hung and
+	          Sinharoy, B.},
+	year = {2002},
+	month = {01},
+	pages = {5-25},
+	title = {\texttt{POWER4 system microarchitecture}},
+	volume = {46},
+	journal = {IBM Journal of Research and Development},
+	doi = {10.1147/rd.461.0005},
+}
 
+@misc{uddin2013advances,
+	title = {Advances in computer architecture},
+	author = {Irfan Uddin},
+	year = {2013},
+	eprint = {1309.5459},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.AR},
+}
+
+@misc{intel-multi,
+	title = "Dual Core Era Begins, PC Makers Start Selling Intel-Based PCs
+	         [Электронный ресурс]",
+	howpublished = "Режим доступа: \url{
+	                https://www.intel.com/pressroom/archive/releases/2005/20050418comp.htm
+	                }",
+	note = "(дата обращения: 22.10.2023)",
+}
+
+@misc{parallel,
+	title = {Is Parallel Programming Hard, And, If So, What Can You Do About It?
+	         (Release v2023.06.11a)},
+	author = {Paul E. McKenney},
+	year = {2023},
+	eprint = {1701.00854},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.DC},
+}
+
+@misc{iot-market,
+	title = {Internet of Things (IoT) Market Size, 2023-2030 [Электронный ресурс]},
+	howpublished = "Режим доступа: \url{
+	                https://www.fortunebusinessinsights.com/industry-reports/internet-of-things-iot-market-100307
+	                },",
+	note = "(дата обращения: 24.10.2023)",
+}
+
+@misc{thampi2009introduction,
+	title = {Introduction to Distributed Systems},
+	author = {Sabu M. Thampi},
+	year = {2009},
+	eprint = {0911.4395},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.DC},
+}
+
+@book{kleppmann2017designing,
+	title = {Designing Data-intensive Applications: The Big Ideas Behind Reliable,
+	         Scalable, and Maintainable Systems},
+	author = {Kleppmann, M.},
+	isbn = {9781449373320},
+	lccn = {2017471021},
+	url = {https://books.google.at/books?id=BM7woQEACAAJ},
+	year = {2017},
+	publisher = {O'Reilly Media},
+}
+
+@article{cap-changed,
+	author = {Brewer, Eric},
+	year = {2012},
+	month = {02},
+	pages = {23-29},
+	title = {CAP Twelve years later: How the "Rules" have Changed},
+	volume = {45},
+	journal = {Computer},
+	doi = {10.1109/MC.2012.37},
+}
+
+@misc{cap-confusion,
+	title = "Henry Robinson: “CAP Confusion: Problems with ‘Partition Tolerance,’”
+	         [Электронный ресурс]",
+	howpublished = "Режим доступа: \url{
+	                https://web.archive.org/web/20120120140424/http://www.cloudera.com/blog/2010/04/cap-confusion-problems-with-partition-tolerance/
+	                }",
+	note = "(дата обращения: 28.10.2023)",
+}
+
+@techreport{Asanović:EECS-2006-183,
+	Author = {Asanović, Krste and Bodik, Ras and Catanzaro, Bryan Christopher and
+	          Gebis, Joseph James and Husbands, Parry and Keutzer, Kurt and
+	          Patterson, David A. and Plishker, William Lester and Shalf, John and
+	          Williams, Samuel Webb and Yelick, Katherine A.},
+	Title = {The Landscape of Parallel Computing Research: A View from Berkeley},
+	Institution = {EECS Department, University of California, Berkeley},
+	Year = {2006},
+	Month = {Dec},
+	URL = {http://www2.eecs.berkeley.edu/Pubs/TechRpts/2006/EECS-2006-183.html},
+	Number = {UCB/EECS-2006-183},
+	Abstract = {The recent switch to parallel microprocessors is a milestone in
+	            the history of computing. Industry has laid out a roadmap for
+	            multicore designs that preserves the programming paradigm of the
+	            past via binary compatibility and cache coherence. Conventional
+	            wisdom is now to double the number of cores on a chip with each
+	            silicon generation. A multidisciplinary group of Berkeley
+	            researchers met nearly two years to discuss this change. Our view
+	            is that this evolutionary approach to parallel hardware and
+	            software may work from 2 or 8 processor systems, but is likely to
+	            face diminishing returns as 16 and 32 processor systems are
+	            realized, just as returns fell with greater instruction-level
+	            parallelism. We believe that much can be learned by examining the
+	            success of parallelism at the extremes of the computing spectrum,
+	            namely embedded computing and high performance computing. This led
+	            us to frame the parallel landscape with seven questions, and to
+	            recommend the following: <ul> <li>The overarching goal should be to
+	            make it easy to write programs that execute efficiently on highly
+	            parallel computing systems <li>The target should be 1000s of cores
+	            per chip, as these chips are built from processing elements that
+	            are the most efficient in MIPS (Million Instructions per Second)
+	            per watt, MIPS per area of silicon, and MIPS per development
+	            dollar. <li>Instead of traditional benchmarks, use 13 "Dwarfs" to
+	            design and evaluate parallel programming models and architectures.
+	            (A dwarf is an algorithmic method that captures a pattern of
+	            computation and communication.) <li>"Autotuners" should play a
+	            larger role than conventional compilers in translating parallel
+	            programs. <li>To maximize programmer productivity, future
+	            programming models must be more human-centric than the conventional
+	            focus on hardware or applications. <li>To be successful,
+	            programming models should be independent of the number of
+	            processors. <li>To maximize application efficiency, programming
+	            models should support a wide range of data types and successful
+	            models of parallelism: task-level parallelism, word-level
+	            parallelism, and bit-level parallelism. <li>Architects should not
+	            include features that significantly affect performance or energy if
+	            programmers cannot accurately measure their impact via performance
+	            counters and energy counters. <li>Traditional operating systems
+	            will be deconstructed and operating system functionality will be
+	            orchestrated using libraries and virtual machines. <li>To explore
+	            the design space rapidly, use system emulators based on Field
+	            Programmable Gate Arrays (FPGAs) that are highly scalable and low
+	            cost. </ul> Since real world applications are naturally parallel
+	            and hardware is naturally parallel, what we need is a programming
+	            model, system software, and a supporting architecture that are
+	            naturally parallel. Researchers have the rare opportunity to
+	            re-invent these cornerstones of computing, provided they simplify
+	            the efficient programming of highly parallel systems.},
+}
+
+@book{lynchdistributed,
+	title = {Distributed Algorithms},
+	author = {Lynch, N.A.},
+	isbn = {9781558603486},
+	lccn = {97041375},
+	series = {The Morgan Kaufmann Data Manag},
+	url = {https://books.google.at/books?id=7C7oIV48RQQC},
+	year = {1996},
+	publisher = {Morgan Kaufmann},
+}
