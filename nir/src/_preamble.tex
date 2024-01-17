@@ -14,6 +14,7 @@
 \setlength{\parindent}{1.25cm}
 \renewcommand{\baselinestretch}{1.5}
 \setlist{nolistsep} % Отсутствие отступов между элементами \enumerate и \itemize
+\renewcommand\labelitemi{--} % Замена булетов на тире
 \usepackage[
 	style=gost-numeric,
 	language=auto,
@@ -78,7 +79,7 @@
 \usepackage{caption}
 \captionsetup[figure]{name={Рисунок},labelsep=endash}
 \captionsetup[table]{singlelinecheck=false, labelsep=endash}
-
+\usepackage{threeparttable}
 \usepackage{graphicx}
 \usepackage{inc/slashbox} % Диагональное разделение первой ячейки в таблицах
 
@@ -131,10 +132,24 @@
 	\texttt{\textcolor{black}{#1}}%
 }
 
-\lstset{language=C,keywordstyle={\bfseries \color{black}}}
+\lstset{
+    language=C, % выбор языка для подсветки
+    basicstyle=\footnotesize\ttfamily,
+    %numberstyle=, % размер шрифта для номеров строк
+    stepnumber=1, % размер шага между двумя номерами строк
+    numbersep=5pt, % как далеко отстоят номера строк от подсвечиваемого кода
+    frame=single, % рисовать рамку вокруг кода
+    tabsize=2, % размер табуляции по умолчанию равен 4 пробелам
+    captionpos=t, % позиция заголовка вверху [t] или внизу [b]
+    breaklines=true,
+    breakatwhitespace=true, % переносить строки только если есть пробел
+    backgroundcolor=\color{white}
+}
+
 \captionsetup{labelsep=endash}
 \usepackage[final]{pdfpages}
 
+\usepackage{makecell}
 \usepackage{placeins}
 \usepackage{listings}
 \usepackage{longtable}
@@ -149,15 +164,16 @@
 \renewcommand\@biblabel[1]{#1.}
 \makeatother
 
+\usepackage{float}
 \newcommand{\img}[3] {
-    \begin{figure}[h]
+    \begin{figure}[H]
         \center{\includegraphics[height=#1]{inc/img/#2}}
         \caption{#3}
         \label{img:#2}
     \end{figure}
 }
 \newcommand{\boximg}[3] {
-    \begin{figure}[h]
+    \begin{figure}[H]
         \center{\fbox{\includegraphics[height=#1]{inc/img/#2}}}
         \caption{#3}
         \label{img:#2}
@@ -184,6 +200,11 @@
 }
 %\hypersetup{citecolor=blue}
 \hypersetup{citecolor=black}
+
+% SVG
+\usepackage[inkscapeformat=png,inkscapeversion=1]{svg}
+% equations
+\usepackage{amsmath}
 
 \title{НИР}
 \begin{document}
