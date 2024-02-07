@@ -42,25 +42,28 @@
 % Переопределение их отступов до и после для 1.5 интервала во всем документе
 \usepackage{titlesec}
 
+% \titleformat{\section}[block]
+% {\bfseries\Large\ifSPECIAL\filcenter\fi}
+%   {\thesection}
+%   {1em}
+%   {}
+% \iffalse
+% \titleformat{name=\section,numberless}[block]
+%   {\Large\bfseries}
+%   {}
+%   {0pt}
+%   {}
+% \fi
+% \newif\ifSPECIAL
+% \NewDocumentCommand{\specsection}{sO{#3}m}{
+%   \SPECIALtrue
+%   \IfBooleanTF{#1}{\section*}{\section*}{#3}
+%     \addcontentsline{toc}{section}{#3}
+%   \SPECIALfalse
+% }
+
 \titleformat{\section}[block]
-{\bfseries\Large\ifSPECIAL\filcenter\fi}
-  {\thesection}
-  {1em}
-  {}
-\iffalse
-\titleformat{name=\section,numberless}[block]
-  {\Large\bfseries}
-  {}
-  {0pt}
-  {}
-\fi
-\newif\ifSPECIAL
-\NewDocumentCommand{\specsection}{sO{#3}m}{
-  \SPECIALtrue
-  \IfBooleanTF{#1}{\section*}{\section*}{#3}
-    \addcontentsline{toc}{section}{#3}
-  \SPECIALfalse
-}
+{\bfseries\normalsize\filcenter}{\thesection}{1em}{}
 
 \titleformat{\subsection}[hang]
 {\bfseries\normalsize}{\thesubsection}{1em}{}
@@ -69,11 +72,12 @@
 \titleformat{\subsubsection}[hang]
 {\bfseries\normalsize}{\thesubsubsection}{1em}{}
 \titlespacing\subsubsection{\parindent}{\parskip}{\parskip}
-
 % \newcommand{\specsection}[1]{
 %     {\centering\section*{#1}}
 %     \addcontentsline{toc}{section}{#1}
 % }
+
+\newcommand{\specsection}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
 
 % Работа с изображениями и таблицами; переопределение названий по ГОСТу
 \usepackage{caption}
@@ -82,11 +86,6 @@
 \usepackage{threeparttable}
 \usepackage{graphicx}
 \usepackage{inc/slashbox} % Диагональное разделение первой ячейки в таблицах
-
-% Цвета для гиперссылок и листингов
-\usepackage{color}
-
-
 
 \usepackage{color} % Цвета для гиперссылок и листингов
 %\definecolor{comment}{rgb}{0,0.5,0}
