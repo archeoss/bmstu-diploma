@@ -1,0 +1,27 @@
+[package]
+name = "cli"
+description = "BobFusion: CLI"
+version.workspace = true
+authors.workspace = true
+license-file.workspace = true
+edition.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+serde_with = "3.3"
+humantime-serde = "1.1"
+tracing = "0.1"
+
+# Error Handling
+error-stack = "0.4"
+thiserror = "1.0"
+
+# CLI
+clap = { version = "4.4", features = ["derive", "cargo"] }
+
+# Meta-info
+build-time = "0.1"
+lazy_static="1.4"

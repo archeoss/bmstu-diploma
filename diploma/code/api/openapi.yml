@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: bob-fusion
+  description: BobFusion
+  contact:
+    name: Romanov Simeon ArchArcheoss@proton.me
+  license:
+    name: ''
+  version: 0.0.0
+paths:
+  /api/v1/hello:
+    get:
+      tags:
+      - rest
+      summary: Hi
+      description: Hi
+      operationId: hello
+      responses:
+        '200':
+          description: Hello World!
+tags:
+- name: bob-fusion
+  description: BobFusion API

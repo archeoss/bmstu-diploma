@@ -1,0 +1,20 @@
+[package]
+name = "proc-macro"
+description = "BobFusion: proc-macro"
+publish = false
+keywords = [ "Bob" ]
+version.workspace = true
+authors.workspace = true
+license-file.workspace = true
+edition.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1"
+proc-macro2 = "1.0"
+syn = "2.0"
+

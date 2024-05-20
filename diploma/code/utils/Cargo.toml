@@ -1,0 +1,29 @@
+[package]
+name = "utils"
+description = "BobFusion: Utility tools"
+publish = false
+keywords = [ "Bob" ]
+version.workspace = true
+authors.workspace = true
+license-file.workspace = true
+edition.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "gen-openapi"
+path = "gen_openapi.rs"
+required-features = [ "gen_api" ]
+
+[dependencies]
+bob-fusion-core = { path = "../bob-fusion/core/", optional = true }
+bob-fusion-scheduler = { path = "../bob-fusion/scheduler/", optional = true }
+bob-fusion-executor = { path = "../bob-fusion/executor/", optional = true }
+clap = { version = "4.5", features = ["derive"] }
+
+## OpenAPI + Swagger
+utoipa = { version = "4.2", features = ["yaml"], optional = true }
+
+[features]
+default = [ "gen_api" ]
+gen_api = [ "dep:utoipa", "bob-fusion-scheduler/swagger"]

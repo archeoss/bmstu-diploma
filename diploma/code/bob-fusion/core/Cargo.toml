@@ -1,0 +1,84 @@
+[package]
+name = "bob-fusion-core"
+description = "BobFusion"
+publish = false
+keywords = [ "Bob" ]
+version.workspace = true
+authors.workspace = true
+license-file.workspace = true
+edition.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+# Note: axum 0.7 and hyper 1.0 are breaking changes
+[dependencies]
+## Axum related
+axum = { workspace = true, features = ["headers"] }
+tower = "0.4"
+tower-http = { version = "0.4", features = ["cors", "fs"] }
+http = { workspace = true }
+
+## Logging
+tracing = { workspace = true }
+file-rotate = "0.7"
+tracing-appender = "0.2"
+tracing-subscriber = "0.3"
+# tracing-forest = { version = "0.1", features = ["tokio"] }
+
+## General
+tokio = { workspace = true, features = ["rt", "macros", "rt-multi-thread" ] }
+hyper = { workspace = true, features = ["http2", "client"] } 
+serde = { workspace = true, features = ["derive"] }
+serde_json = "1.0"
+pin-project = "1.1"
+nutype = { workspace = true }
+# strum = { version = "0.25", features = ["derive"] }
+
+## Error Handling
+error-stack = { workspace = true }
+thiserror = { workspace = true }
+
+## OpenAPI + Swagger
+utoipa = { version = "4.0", features = ["yaml", "axum_extras",  "chrono", "openapi_extensions"], optional = true }
+
+## Tonic
+tonic = { workspace = true }
+
+## OTLP
+opentelemetry = { version = "0.22", optional = true }
+tracing-opentelemetry = { version = "0.23", optional = true, features = ["metrics"] } 
+# opentelemetry-jaeger = "0.20"
+opentelemetry_sdk = { version = "0.22", optional = true, features = ["rt-tokio"] }
+# opentelemetry-prometheus = { version = "0.15", optional = true }
+opentelemetry-otlp = { version = "0.15", optional = true, features = ["metrics"] }
+opentelemetry-semantic-conventions = { version = "0.14", optional = true }
+prometheus-client = { version = "0.22", optional = true }
+autometrics = { version = "1.0", optional = true, features = ["prometheus-client-0_22", "otel-push-exporter-tokio", "exemplars-tracing", "prometheus-exporter"] }
+
+## CLI
+cli = { workspace = true }
+
+## Macro (Disable for now)
+# proc-macro = { path = "../proc_macro" } 
+
+[dev-dependencies]
+utoipa = { version = "4.0", features = ["yaml", "axum_extras",  "chrono", "openapi_extensions"]}
+
+[build-dependencies]
+tonic-build = "0.11"
+
+[features]
+default = [ "swagger", "otlp-exporter" ]
+swagger = [ "dep:utoipa" ]
+otlp-exporter = [ 
+                  "dep:opentelemetry",
+                  "dep:tracing-opentelemetry", 
+                  "dep:opentelemetry_sdk", 
+                  # "dep:opentelemetry-prometheus", 
+                  "dep:opentelemetry-otlp", 
+                  "dep:opentelemetry-semantic-conventions", 
+                  "dep:prometheus-client" ,
+                  "dep:autometrics",
+                  "tracing-subscriber/env-filter"
+                ]
+

@@ -1,0 +1,45 @@
+[package]
+name = "bob-fusion-executor"
+description = "BobFusion"
+build = "build.rs"
+publish = false
+keywords = [ "Bob" ]
+version.workspace = true
+authors.workspace = true
+license-file.workspace = true
+edition.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+# Note: axum 0.7 and hyper 1.0 are breaking changes
+[dependencies]
+## General
+tokio = { workspace = true, features = ["rt", "macros", "rt-multi-thread"] }
+
+## Tonic
+tonic = { workspace = true }
+prost = { workspace = true }
+
+## Logging
+tracing = { workspace = true }
+
+## Error Handling
+error-stack = { workspace = true }
+thiserror = { workspace = true }
+
+## Time
+chrono = { workspace = true }
+
+[build-dependencies]
+tonic-build = "0.11"
+
+[dev-dependencies]
+testcontainers = { version = "0.16" }
+futures = "0.3"
+tracing = { workspace = true }
+reqwest = "0.12"
+hyper = { workspace = true }
+tokio = { workspace = true }
+
+[features]
+
